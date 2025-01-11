@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://4x6gl43dou1q"]
+
+[ext_resource type="Texture2D" uid="uid://c1232bscxqhnv" path="res://tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_gcdqr"]
+[ext_resource type="Script" path="res://Towers/red_bullet_tower.gd" id="1_r61dc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bifj"]
+size = Vector2(102, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi0cm"]
+radius = 448.0
+
+[node name="RedBulletTower" type="StaticBody2D"]
+script = ExtResource("1_r61dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_5bifj")
+
+[node name="Area" type="Marker2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="TowerDefenseTile250" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("1_gcdqr")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_yi0cm")
+
+[node name="Node" type="Node" parent="."]
